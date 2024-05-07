@@ -1,16 +1,24 @@
 """2. Write a program  Display Fibonacci series up to 10 terms using recursion"""
 
-def Fibonacci(num):
-    num1=0
-    num2=1
-    print(num1,"\t")
-    print(num2,"\t")
-    while(num>2):  #num>2 as we have already printed two numbers 0 and 1
-        num3=num1+num2
-        print(num3,"\t")
-        num1=num2
-        num2=num3
-        num-=1
-        
-Fibonacci(10)
+def fibonnaci(n,num1,num2):
+    if n<3:
+        return
+    fib_num=num1+num2
+    num1=num2
+    num2=fib_num
+    print(fib_num,end=" ")
+    fibonnaci(n-1,num1,num2)
+    
+num=int(input("Enter Number Of Occurance: "))
+
+if(num<1):
+    print("INVALID")
+elif(num==1):
+    print("0",end=" ")
+elif(num==2):
+    print("0 1",end=" ")
+else:
+    print("0 1",end=" ")
+    fibonnaci(num,0,1)
+
         
